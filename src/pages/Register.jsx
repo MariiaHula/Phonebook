@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
-import { useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import { registerUserThunk } from 'redux/users/operations';
+import { registerUserThunk } from 'redux/auth/operations';
+import { selectIsLoggedIn } from 'redux/auth/selectors';
 
 const Register = () => {
+  const navigate = useNavigate();
+  const isLoggedIn = useSelector(selectIsLoggedIn);
   const dispatch = useDispatch();
   const {
     register,
@@ -19,6 +22,11 @@ const Register = () => {
     dispatch(registerUserThunk(data));
     reset();
   };
+  useEffect(() => {
+    if (isLoggedIn) {
+      navigate('/contacts');
+    }
+  }, [navigate, isLoggedIn]);
 
   return (
     <div>

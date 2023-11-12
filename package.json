@@ -4,6 +4,8 @@
   "private": true,
   "homepage": "https://mariiahula.github.io/goit-react-hw-08-phonebook",
   "dependencies": {
+    "@headlessui/react": "^1.7.17",
+    "@heroicons/react": "^2.0.18",
     "@redux-devtools/extension": "^3.2.6",
     "@reduxjs/toolkit": "^1.9.7",
     "@testing-library/jest-dom": "^5.16.3",
@@ -49,5 +51,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "daisyui": "^3.9.4",
+    "tailwindcss": "^3.3.5"
   }
 }

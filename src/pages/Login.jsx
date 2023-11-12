@@ -1,9 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import { loginUserThunk } from 'redux/auth/operations';
+import { selectIsLoggedIn, selectUsers } from 'redux/auth/selectors';
 
 const Login = () => {
+  const navigate = useNavigate();
+  const { name } = useSelector(selectUsers);
+  const isLoggedIn = useSelector(selectIsLoggedIn);
+  const dispatch = useDispatch();
+
   const {
     register,
     handleSubmit,
@@ -11,11 +19,16 @@ const Login = () => {
     formState: { errors },
   } = useForm();
   const submit = data => {
-    console.log(data);
-    toast.success(`${data.name} welcome to your Phonebook!`);
-    //  dispatch(addContactThunk({ name, phone }));
+    const { email, password } = data;
+    toast.success(`${name} welcome back to your Phonebook!`);
+    dispatch(loginUserThunk({ email, password }));
     reset();
   };
+  useEffect(() => {
+    if (isLoggedIn) {
+      navigate('/contacts');
+    }
+  }, [navigate, isLoggedIn]);
 
   return (
     <div>
