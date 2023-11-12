@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
 import { useModal } from 'hooks/useModal';
 
-import Modal from 'components/Modal/Modal';
+import Modal from 'components/Modal';
 
 import {
   selectCurrentID,
