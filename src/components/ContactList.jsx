@@ -13,11 +13,14 @@ import {
 import { deleteContactThunk } from 'redux/contacts/operations';
 
 import { EditForm } from 'components/EditForm';
+import { LiaPenSolid } from 'react-icons/lia';
+import { FiMinus } from 'react-icons/fi';
 
 const ContactList = () => {
   const contacts = useSelector(selectFilteredContact);
   const currentId = useSelector(selectCurrentID);
   const loading = useSelector(selectIsLoading);
+
   const dispatch = useDispatch();
 
   const { isOpen, openModal, closeModal } = useModal();
@@ -30,27 +33,42 @@ const ContactList = () => {
 
   return (
     <>
-      <ul>
+      <ul className="mt-4">
         {contacts.length ? (
           contacts.map(contact => (
-            <li key={contact.id}>
-              <p>{contact.name}</p>
-              <p>{contact.phone}</p>
-              <button onClick={() => openEditModal(contact)}>Edit</button>
-
-              {loading && currentId === contact.id ? (
-                <button>Deleting...</button>
-              ) : (
+            <li
+              key={contact.id}
+              className="mb-4 p-4 bg-white rounded-md  relative"
+            >
+              <p className="text-xl font-semibold text-blue-500">
+                {contact.name}
+              </p>
+              <p className="text-blue-700">{contact.number}</p>
+              <div className="flex mt-2 absolute bottom-3 right-3">
                 <button
-                  onClick={() => dispatch(deleteContactThunk(contact.id))}
+                  onClick={() => openEditModal(contact)}
+                  className="mr-2 px-4 py-2 bg-yellow-500 text-white rounded-full hover:bg-yellow-600"
                 >
-                  Delete
+                  <LiaPenSolid size={30} />
                 </button>
-              )}
+
+                {loading && currentId === contact.id ? (
+                  <button className="px-4 py-2 bg-red-500 text-white rounded-full cursor-not-allowed">
+                    Deleting...
+                  </button>
+                ) : (
+                  <button
+                    onClick={() => dispatch(deleteContactThunk(contact.id))}
+                    className="px-4 py-2 bg-red-500 text-white rounded-full hover:bg-red-600"
+                  >
+                    <FiMinus size={30} />
+                  </button>
+                )}
+              </div>
             </li>
           ))
         ) : (
-          <p>Unfortunately, there are no matches</p>
+          <p className="text-gray-600">Unfortunately, there are no matches</p>
         )}
       </ul>
       {isOpen ? (

@@ -23,20 +23,44 @@ export const EditForm = ({ closeModal, contact }) => {
     }
   };
   return (
-    <form onSubmit={handleSubmit(submitEdit)}>
-      <label>
-        Name
-        <input {...register('name')} type="text" />
-      </label>
-      <label>
-        Number
-        <input {...register('number')} type="tel" />
-      </label>
-      <div>
-        <button onClick={closeModal} type="button">
+    <form
+      onSubmit={handleSubmit(submitEdit)}
+      className="max-w-md mx-auto p-4 rounded-md bg-white shadow-md"
+    >
+      <div className="mb-4">
+        <label className="block text-gray-700 text-sm font-bold mb-2">
+          Name
+        </label>
+        <input
+          {...register('name')}
+          type="text"
+          className="input input-bordered input-info w-full p-2 rounded-md"
+        />
+      </div>
+      <div className="mb-4">
+        <label className="block text-gray-700 text-sm font-bold mb-2">
+          Number
+        </label>
+        <input
+          {...register('number')}
+          type="tel"
+          className="input input-bordered input-info w-full p-2 rounded-md"
+        />
+      </div>
+      <div className="flex justify-end">
+        <button
+          onClick={closeModal}
+          type="button"
+          className="mr-2 px-4 py-2 bg-amber-500 text-white rounded-md hover:bg-amber-600"
+        >
           Cancel
         </button>
-        <button type="submit">Update</button>
+        <button
+          type="submit"
+          className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
+        >
+          Update
+        </button>
       </div>
     </form>
   );

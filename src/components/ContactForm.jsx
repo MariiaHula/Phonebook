@@ -7,6 +7,7 @@ import { addContactThunk } from 'redux/contacts/operations';
 
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { HiOutlinePlus } from 'react-icons/hi';
 
 const ContactForm = () => {
   const contacts = useSelector(selectContacts);
@@ -37,24 +38,32 @@ const ContactForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(submit)}>
-      <label>
-        Name
-        <input
-          {...register('name', { required: 'This is required' })}
-          type="text"
-        />
-        <p>{errors.name?.message}</p>
-      </label>
-      <label>
-        Number
-        <input
-          {...register('number', { required: 'This is required' })}
-          type="tel"
-        />
-        <p>{errors.number?.message}</p>
-      </label>
-      <button type="submit">Add Contact</button>
+    <form
+      onSubmit={handleSubmit(submit)}
+      className="max-w-md mx-auto p-4 rounded-md flex-col"
+    >
+      <input
+        {...register('name', { required: 'This is required' })}
+        type="text"
+        className="input input-bordered input-info w-full sm:w-[200px] mb-3"
+        placeholder="Name"
+      />
+      <p className="text-red-500 text-sm">{errors.name?.message}</p>
+
+      <input
+        {...register('number', { required: 'This is required' })}
+        type="tel"
+        className="input input-bordered input-info w-full sm:w-[200px] mb-3"
+        placeholder="Number"
+      />
+      <p className="text-red-500 text-sm">{errors.number?.message}</p>
+
+      <button
+        type="submit"
+        className="mx-auto px-4 py-2 bg-blue-500 text-white p-2 flex items-center justify-center hover:bg-blue-600 rounded-full"
+      >
+        <HiOutlinePlus size={30} />
+      </button>
     </form>
   );
 };

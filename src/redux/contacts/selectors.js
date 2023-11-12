@@ -15,7 +15,10 @@ export const selectFilteredContact = createSelector(
           .toLowerCase()
           .trim()
           .includes(filter.toLowerCase().trim()) ||
-        contact.phone.toLowerCase().trim().includes(filter.toLowerCase().trim())
+        contact.number
+          .toLowerCase()
+          .trim()
+          .includes(filter.toLowerCase().trim())
     );
   }
 );

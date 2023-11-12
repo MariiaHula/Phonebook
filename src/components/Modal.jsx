@@ -6,8 +6,10 @@ const rootModal = document.querySelector('#modal');
 
 const Modal = ({ children }) => {
   return ReactDOM.createPortal(
-    <div>
-      <div>{children}</div>
+    <div className="fixed inset-0 flex items-center justify-center backdrop-blur-md bg-opacity-50">
+      <div className="bg-white p-6 rounded-md max-w-md w-full m-4 relative z-10">
+        {children}
+      </div>
     </div>,
     rootModal
   );

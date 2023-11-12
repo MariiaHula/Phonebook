@@ -18,6 +18,7 @@ const Filter = () => {
       value={filter}
       onChange={handleChangeFilter}
       placeholder="Find contact by name"
+      className="input input-bordered input-warning w-full max-w-xs"
     />
   );
 };
