@@ -1,7 +1,25 @@
 import React from 'react';
 
 const NotFound = () => {
-  return <div>Sorry. 404</div>;
+  return (
+    <>
+      <div className="flex items-center justify-center h-screen p-6">
+        <div className="text-center">
+          <div className=" text-black w-800 font-bold rounded-lg border shadow-lg p-20">
+            <p className="mb-4 text-5xl">Sorry, 404</p>
+            <div className="flex items-center justify-center">
+              <img
+                width={400}
+                height={400}
+                src="https://pbs.twimg.com/media/FNU7vUNVEAMM0PA.jpg"
+                alt="sorry"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
 };
 
 export default NotFound;

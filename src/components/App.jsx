@@ -1,17 +1,17 @@
-import React, { useEffect } from 'react';
+import React, { lazy, useEffect } from 'react';
 import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import CategoryLoader from './ContentLoader';
-import Layout from './Layout';
-import Home from '../pages/Home';
-import Phonebook from '../pages/Phonebook';
-import Login from 'pages/Login';
-import Register from 'pages/Register';
-import NotFound from 'pages/NotFound';
-
 import { refreshUserThunk } from 'redux/auth/operations';
 import PrivateRoute from './hoc/PrivateRoute';
 import { selectIsRefresh } from 'redux/auth/selectors';
+import CategoryLoader from './ContentLoader';
+import Layout from './Layout';
+import NotFound from 'pages/NotFound';
+
+const Home = lazy(() => import('pages/Home'));
+const Phonebook = lazy(() => import('pages/Phonebook'));
+const Login = lazy(() => import('pages/Login'));
+const Register = lazy(() => import('pages/Register'));
 
 export const App = () => {
   const dispatch = useDispatch();

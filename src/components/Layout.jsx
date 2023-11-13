@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
+import CategoryLoader from './ContentLoader';
 import Navbar from './Navbar';
 
 const Layout = () => {
@@ -9,7 +10,15 @@ const Layout = () => {
         <Navbar />
       </header>
       <main>
-        <Outlet />
+        <Suspense
+          fallback={
+            <div className="flex justify-center items-center">
+              <CategoryLoader />
+            </div>
+          }
+        >
+          <Outlet />
+        </Suspense>
       </main>
     </>
   );
