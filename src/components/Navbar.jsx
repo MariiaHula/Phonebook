@@ -3,35 +3,28 @@ import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { selectIsLoggedIn } from 'redux/auth/selectors';
 import UserMenu from './UserMenu';
-import { AiOutlineHome } from 'react-icons/ai';
-import { BsPhoneVibrate } from 'react-icons/bs';
+import { PhoneIcon, HomeIcon } from '@heroicons/react/24/solid';
 
 const Navbar = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
 
   return (
     <>
-      <div className="bg-white p-6 flex justify-between items-center shadow-lg h-[96px]">
+      <div className="bg-white p-6 flex justify-between items-center shadow-lg h-[96px] md:px-10">
         <div className="flex">
           {!isLoggedIn ? (
             <NavLink
               to="/"
               className="text-black text-[24px] font-bold hover:text-yellow-300 mr-20 transition-all duration-300 ease-in-out cursor-pointer"
             >
-              <AiOutlineHome size={36} />
+              <HomeIcon className="h-8 w-8 md:h-10 md:w-10  hover:text-sky-600 underline transition-all duration-300 ease-in-out cursor-pointer" />
             </NavLink>
           ) : (
             <NavLink
               to="/contacts"
               className="text-black text-[24px] font-bold hover:text-yellow-300 mr-10 transition-all duration-300 ease-in-out cursor-pointer"
             >
-              <BsPhoneVibrate
-                size={36}
-                style={{
-                  color: '#fda403',
-                  marginLeft: '8px',
-                }}
-              />
+              <PhoneIcon className="h-8 w-8 md:h-10 md:w-10 text-yellow-500 " />
             </NavLink>
           )}
         </div>

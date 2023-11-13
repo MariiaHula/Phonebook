@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import img_2 from '../images/img_2.jpg';
+import { PhoneIcon } from '@heroicons/react/24/solid';
 
 const Home = () => {
   return (
@@ -8,8 +9,8 @@ const Home = () => {
       className="bg-cover bg-center min-h-screen flex items-center justify-center flex-wrap"
       style={{ backgroundImage: `url(${img_2})` }}
     >
-      <div className="text-center max-w-[200px] px-4 flex-col items-center rotate-1 mt-40  md:mt-40 md:justify-center md:min-w-[220px] lg:mt-50  lg:min-w-[240px] xl:min-w-[280px]">
-        <h1 className=" text-3xl mb-6 md:text-[32px]  lg:text-4xl  font-bold xl:text-[44px]  ">
+      <div className="text-center max-w-[220px] px-4 flex-col items-center rotate-1 mt-36 mb-10  md:mt-40 md:justify-center md:min-w-[220px] lg:mt-50  lg:min-w-[240px] xl:min-w-[280px]">
+        <h1 className=" text-3xl mb-12 md:text-[32px]  lg:text-4xl  font-bold xl:text-[44px]  ">
           Welcome to Phonebook!
         </h1>
 
@@ -26,9 +27,10 @@ const Home = () => {
           Register
         </Link>
 
-        <p className="mt-6 mb-36 text-center md:text-lg lg:text-xl font-bold whitespace-normal xl:text-2xl xl:mb-26">
+        <p className="mt-6 mb-12 text-center md:text-lg lg:text-xl font-bold whitespace-normal xl:text-2xl xl:mb-26">
           Easy to search & quick to save!
         </p>
+        <PhoneIcon className="h-8 w-8 md:h-10 md:w-10 text-sky-600 m-0 auto" />
       </div>
     </div>
   );

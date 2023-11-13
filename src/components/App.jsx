@@ -26,7 +26,9 @@ export const App = () => {
   return (
     <>
       {refresh ? (
-        <CategoryLoader />
+        <div className="flex justify-center items-center">
+          <CategoryLoader />
+        </div>
       ) : (
         <div>
           <Routes>
