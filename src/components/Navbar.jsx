@@ -10,7 +10,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="bg-white p-6 flex justify-between items-center shadow-lg h-[96px] md:px-10">
+      <div className="bg-white p-3 flex justify-between items-center shadow-lg md:px-10">
         <div className="flex">
           {!isLoggedIn ? (
             <NavLink
@@ -22,7 +22,7 @@ const Navbar = () => {
           ) : (
             <NavLink
               to="/contacts"
-              className="text-black text-[24px] font-bold hover:text-yellow-300 mr-10 transition-all duration-300 ease-in-out cursor-pointer"
+              className="text-black text-[24px] font-bold  mr-10 "
             >
               <PhoneIcon className="h-8 w-8 md:h-10 md:w-10 text-yellow-500 " />
             </NavLink>
