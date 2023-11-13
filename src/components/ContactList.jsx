@@ -72,7 +72,9 @@ const ContactList = () => {
             </li>
           ))
         ) : (
-          <p className="text-gray-600">Unfortunately, there are no matches</p>
+          <p className="text-gray-700 text-3xl text-center">
+            Unfortunately, there are no matches
+          </p>
         )}
       </ul>
       {isOpen ? (
