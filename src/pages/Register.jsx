@@ -18,12 +18,16 @@ const Register = () => {
     reset,
     formState: { errors },
   } = useForm();
-  const submit = data => {
-    console.log(data);
-    toast.success(`${data.name} welcome to your Phonebook!`);
-    dispatch(registerUserThunk(data));
+  const submit = async data => {
+    try {
+      await dispatch(registerUserThunk(data)).unwrap();
+      toast.success(`${data.name} welcome to your Phonebook!`);
+    } catch (error) {
+      toast.error('Sorry, registration failed');
+    }
     reset();
   };
+
   useEffect(() => {
     if (isLoggedIn) {
       navigate('/contacts');

@@ -20,17 +20,22 @@ const Login = () => {
     reset,
     formState: { errors },
   } = useForm();
-  const submit = data => {
-    const { email, password } = data;
-    toast.success(`${name} welcome back to your Phonebook!`);
-    dispatch(loginUserThunk({ email, password }));
+  const submit = async data => {
+    try {
+      const { email, password } = data;
+      await dispatch(loginUserThunk({ email, password })).unwrap();
+    } catch (error) {
+      toast.error('Sorry, authorization failed');
+    }
     reset();
   };
+
   useEffect(() => {
     if (isLoggedIn) {
+      toast.success(`${name} welcome back to your Phonebook!`);
       navigate('/contacts');
     }
-  }, [navigate, isLoggedIn]);
+  }, [navigate, isLoggedIn, name]);
 
   return (
     <div className="bg-cover bg-center min-h-screen flex items-center justify-center flex-wrap relative transition duration-150 ease-in-out ">
