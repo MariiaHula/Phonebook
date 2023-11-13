@@ -17,7 +17,7 @@ export const EditForm = ({ closeModal, contact }) => {
         name: data.name,
         number: data.number,
       };
-      console.log(data);
+
       dispatch(updateContactThunk(updatedContact));
       closeModal();
     }

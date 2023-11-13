@@ -9,7 +9,7 @@ const Home = () => {
       style={{ backgroundImage: `url(${img_2})` }}
     >
       <div className="text-center max-w-[220px] px-4 flex-col items-center rotate-1 mt-40 mb-4 md:px-2 md:justify-center md:min-w-[260px] xl:min-w-[280px]">
-        <h1 className=" text-4xl mb-12  lg:text-4xl  font-bold xl:text-[44px]  ">
+        <h1 className=" text-4xl mb-12  lg:text-4xl  font-bold xl:text-5xl  ">
           Welcome to Phonebook!
         </h1>
 
