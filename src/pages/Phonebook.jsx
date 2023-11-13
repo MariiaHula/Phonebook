@@ -26,7 +26,7 @@ const Phonebook = () => {
 
   return (
     <>
-      <div className="flex  min-h-screen bg-yellow-100">
+      <div className="flex min-h-screen bg-yellow-100">
         {error ? (
           <div className="text-center">
             <p className="text-2xl mb-4">
