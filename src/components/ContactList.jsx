@@ -57,8 +57,8 @@ const ContactList = () => {
                 </button>
 
                 {loading && currentId === contact.id ? (
-                  <button className="  w-[60px] h-10 font-roboto text-xs uppercase tracking-wide font-semibold bg-red-400 text-white border-none rounded-full shadow-md transition-all duration-300 ease-in-out cursor-pointer focus:outline-none hover:bg-red-600 focus:bg-red-600 flex items-center justify-center">
-                    Deleting...
+                  <button className="  w-[80px] h-10 font-roboto text-xs uppercase tracking-wide font-semibold bg-red-400 text-white border-none rounded-full shadow-md transition-all duration-300 ease-in-out cursor-pointer focus:outline-none hover:bg-red-600 focus:bg-red-600 flex items-center justify-center">
+                    Deleting
                   </button>
                 ) : (
                   <button

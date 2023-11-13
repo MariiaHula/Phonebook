@@ -13,6 +13,7 @@ const initialState = {
   },
   token: '',
   isLoggedIn: false,
+  isRefresh: false,
 };
 
 export const usersSlice = createSlice({
@@ -21,12 +22,19 @@ export const usersSlice = createSlice({
   extraReducers: builder => {
     builder
       .addCase(logoutUserThunk.fulfilled, (state, { payload }) => {
-        return (state = initialState);
+        return (state = { ...initialState, isRefresh: false });
+      })
+      .addCase(refreshUserThunk.pending, state => {
+        state.isRefresh = true;
+      })
+      .addCase(refreshUserThunk.rejected, state => {
+        state.isRefresh = false;
       })
       .addCase(refreshUserThunk.fulfilled, (state, { payload }) => {
         state.user.name = payload.name;
         state.user.email = payload.email;
         state.isLoggedIn = true;
+        state.isRefresh = false;
       })
       .addMatcher(
         isAnyOf(registerUserThunk.fulfilled, loginUserThunk.fulfilled),
