@@ -40,12 +40,12 @@ const ContactForm = () => {
   return (
     <form
       onSubmit={handleSubmit(submit)}
-      className="max-w-md mx-auto p-4 rounded-md flex-col"
+      className=" flex items-center justify-center max-w-md mx-auto p-4 rounded-md flex-col space-y-3 md:items-center xl:flex-row xl:space-y-0 xl:space-x-8"
     >
       <input
         {...register('name', { required: 'This is required' })}
         type="text"
-        className="input input-bordered input-info w-full sm:w-[200px] mb-3"
+        className="input input-bordered input-info w-full max-w-xs sm:max-w-md md:min-w-[400px] md:max-w-lg lg:max-w-xl"
         placeholder="Name"
       />
       <p className="text-red-500 text-sm">{errors.name?.message}</p>
@@ -53,14 +53,14 @@ const ContactForm = () => {
       <input
         {...register('number', { required: 'This is required' })}
         type="tel"
-        className="input input-bordered input-info w-full sm:w-[200px] mb-3"
+        className="input input-bordered input-info w-full max-w-xs sm:max-w-md md:min-w-[400px] md:max-w-lg lg:max-w-xl"
         placeholder="Number"
       />
       <p className="text-red-500 text-sm">{errors.number?.message}</p>
 
       <button
         type="submit"
-        className="mx-auto px-4 py-2 bg-blue-500 text-white p-2 flex items-center justify-center hover:bg-blue-600 rounded-full"
+        className=" w-[90px] h-10 font-roboto text-xs uppercase tracking-wide font-semibold text-white bg-sky-400 border-none rounded-full shadow-md transition-all duration-300 ease-in-out cursor-pointer focus:outline-none hover:bg-sky-500 focus:bg-sky-500 flex items-center justify-center md:ml-2 xl:min-w-[90px]"
       >
         <HiOutlinePlus size={30} />
       </button>

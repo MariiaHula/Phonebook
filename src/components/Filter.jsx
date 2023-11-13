@@ -18,7 +18,7 @@ const Filter = () => {
       value={filter}
       onChange={handleChangeFilter}
       placeholder="Find contact by name"
-      className="input input-bordered input-warning w-full max-w-xs"
+      className="input input-bordered input-warning w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl"
     />
   );
 };

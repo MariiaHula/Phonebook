@@ -44,7 +44,7 @@ const contactsSlice = createSlice({
           contact => contact.id === payload.id
         );
         editContact.name = payload.name;
-        editContact.phone = payload.phone;
+        editContact.number = payload.number;
       })
       .addMatcher(
         isAnyOf(

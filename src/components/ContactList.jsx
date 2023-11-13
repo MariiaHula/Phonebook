@@ -38,28 +38,32 @@ const ContactList = () => {
           contacts.map(contact => (
             <li
               key={contact.id}
-              className="mb-4 p-4 bg-white rounded-md  relative"
+              className="mb-4 p-4 bg-white rounded-md shadow-md relative"
             >
-              <p className="text-xl font-semibold text-blue-500">
-                {contact.name}
-              </p>
-              <p className="text-blue-700">{contact.number}</p>
-              <div className="flex mt-2 absolute bottom-3 right-3">
+              <div className="flex flex-col sm:flex-row md:px-2 lg:px-4">
+                <p className="text-2xl font-semibold text-sky-500 sm:w-[200px]  lg:w-[400px]">
+                  {contact.name}
+                </p>
+                <p className="text-sky-800 text-xl sm:w-[200px] md:text-2xl">
+                  {contact.number}
+                </p>
+              </div>
+              <div className="flex mt-2 absolute bottom-3 right-3 md:px-2 lg:px-4">
                 <button
                   onClick={() => openEditModal(contact)}
-                  className="mr-2 px-4 py-2 bg-yellow-500 text-white rounded-full hover:bg-yellow-600"
+                  className=" mr-3 w-[60px] h-10 font-roboto text-xs uppercase tracking-wide font-semibold bg-yellow-400 text-white border-none rounded-full shadow-md transition-all duration-300 ease-in-out cursor-pointer focus:outline-none hover:bg-yellow-600 focus:bg-yellow-600 flex items-center justify-center md:mr-6 lg:mr-10"
                 >
                   <LiaPenSolid size={30} />
                 </button>
 
                 {loading && currentId === contact.id ? (
-                  <button className="px-4 py-2 bg-red-500 text-white rounded-full cursor-not-allowed">
+                  <button className="  w-[60px] h-10 font-roboto text-xs uppercase tracking-wide font-semibold bg-red-400 text-white border-none rounded-full shadow-md transition-all duration-300 ease-in-out cursor-pointer focus:outline-none hover:bg-red-600 focus:bg-red-600 flex items-center justify-center">
                     Deleting...
                   </button>
                 ) : (
                   <button
                     onClick={() => dispatch(deleteContactThunk(contact.id))}
-                    className="px-4 py-2 bg-red-500 text-white rounded-full hover:bg-red-600"
+                    className="w-[60px] h-10 font-roboto text-xs uppercase tracking-wide font-semibold bg-red-400 text-white border-none rounded-full shadow-md transition-all duration-300 ease-in-out cursor-pointer focus:outline-none hover:bg-red-600 focus:bg-red-600 flex items-center justify-center"
                   >
                     <FiMinus size={30} />
                   </button>
@@ -72,7 +76,7 @@ const ContactList = () => {
         )}
       </ul>
       {isOpen ? (
-        <Modal>
+        <Modal closeModal={closeModal}>
           <EditForm closeModal={closeModal} contact={editingContact} />
         </Modal>
       ) : null}
