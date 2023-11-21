@@ -89,9 +89,13 @@ const Register = () => {
             className="input input-bordered input-info w-full max-w-xs mb-4"
             placeholder="Confirm password"
           />
-          <p className="text-red-500 text-sm mb-3 mt-0">
-            {'Password confirmation does not match'}
-          </p>
+
+          {errors.confirmPassword && (
+            <p className="text-red-500 text-sm mb-3 mt-0">
+              'Password confirmation does not match'{' '}
+            </p>
+          )}
+
           <button
             type="submit"
             className="mx-auto px-6 py-2 bg-sky-500 text-white p-2 flex items-center justify-center hover:bg-sky-600 rounded-lg transition-all duration-300 ease-in-out cursor-pointer"
