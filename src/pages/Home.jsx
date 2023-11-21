@@ -6,20 +6,20 @@ import img_1 from '../images/img_1.png';
 const Home = () => {
   return (
     <div
-      className="bg-cover bg-center h-screen flex items-center justify-center"
+      className="bg-cover bg-center h-full flex items-center justify-center"
       style={{
         backgroundImage: `url(${img_2})`,
       }}
     >
-      <div className="relative min-h-screen flex items-center justify-center">
-        <div className="relative w-64 md:w-[320px]  ">
+      <div className="h-screen flex items-center justify-center">
+        <div className="relative w-64 md:w-[280px] mb-[180px] ">
           <img
             className="w-full h-auto transform scale-140 md:scale-140 lg:scale-140 xl:scale-140"
             src={img_1}
             alt="phone"
           />
           <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
-            <h1 className="text-3xl md:text-[44px]  font-bold mb-8 text-black max-w-[80%] mx-auto">
+            <h1 className="text-3xl md:text-4xl  font-bold mb-8 text-black max-w-[80%] mx-auto">
               Welcome to Phonebook!
             </h1>
             <div className="flex flex-col items-center space-y-4">
