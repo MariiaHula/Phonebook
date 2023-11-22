@@ -35,16 +35,16 @@ const Phonebook = () => {
             </p>
           </div>
         ) : (
-          <div className="p-4 sm:p-8 md:p-12 lg:p-16 bg-sky-50 w-full max-w-screen-xl mx-auto ">
-            <div className="mb-6">
+          <div className="p-4 sm:p-6 md:p-8  bg-sky-50 w-full max-w-screen-xl mx-auto ">
+            <div className="mb-2">
               <h1 className="text-2xl text-center md:text-3xl lg:text-4xl xl:text-5xl font-bold text-yellow-500">
                 Add new contact
               </h1>
             </div>
             <ContactForm />
             {contacts.length > 0 ? (
-              <div className="flex flex-col items-center justify-center space-y-10 md:mb-6">
-                <h2 className="text-2xl text-center md:text-3xl lg:text-4xl xl:text-5xl font-bold mt-8 mb-4 text-yellow-500">
+              <div className="flex flex-col items-center justify-center space-y-4 md:mb-6">
+                <h2 className="text-2xl text-center md:text-3xl lg:text-4xl xl:text-5xl font-bold mt-8 mb-2 text-yellow-500">
                   Your list
                 </h2>
                 <Filter />
