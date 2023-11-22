@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import img_2 from '../images/img_2.jpg';
 import img_1 from '../images/img_1.png';
+import { phoneAnimation } from 'animate/animation';
 
 const Home = () => {
   return (
@@ -11,7 +13,12 @@ const Home = () => {
         backgroundImage: `url(${img_2})`,
       }}
     >
-      <div className="h-screen flex items-center justify-center">
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        variants={phoneAnimation}
+        className="h-screen flex items-center justify-center"
+      >
         <div className="relative w-64 md:w-[280px] ">
           <img
             className="w-full h-auto transform scale-140 md:scale-140 lg:scale-140 xl:scale-140"
@@ -41,7 +48,7 @@ const Home = () => {
             </p>
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };
