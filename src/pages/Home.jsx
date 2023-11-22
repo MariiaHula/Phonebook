@@ -19,7 +19,7 @@ const Home = () => {
         variants={phoneAnimation}
         className="h-screen flex items-center justify-center"
       >
-        <div className="relative w-64 md:w-[280px] mb-[90px]">
+        <div className="relative w-64 md:w-[280px] mb-[80px]">
           <img
             className="w-full h-auto transform scale-140 md:scale-140 lg:scale-140 xl:scale-140"
             src={img_1}
