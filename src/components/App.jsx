@@ -31,12 +31,7 @@ export const App = () => {
           <CategoryLoader />
         </div>
       ) : (
-        <div
-          className="h-screen overflow-hidden"
-          // className={`h-screen ${
-          //   location.pathname === '/' ? 'overflow-hidden' : ''
-          // }`}
-        >
+        <div className="h-screen overflow-hidden">
           <Routes>
             <Route path="/" element={<Layout />}>
               <Route index element={<Home />} />
