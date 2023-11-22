@@ -6,13 +6,13 @@ import img_1 from '../images/img_1.png';
 const Home = () => {
   return (
     <div
-      className="bg-cover bg-center h-full flex items-center justify-center"
+      className="bg-cover bg-center h-screen flex items-center justify-center overflow-y-hidden"
       style={{
         backgroundImage: `url(${img_2})`,
       }}
     >
       <div className="h-screen flex items-center justify-center">
-        <div className="relative w-64 md:w-[280px] mb-[160px] ">
+        <div className="relative w-64 md:w-[280px] ">
           <img
             className="w-full h-auto transform scale-140 md:scale-140 lg:scale-140 xl:scale-140"
             src={img_1}
