@@ -26,7 +26,7 @@ const Phonebook = () => {
 
   return (
     <>
-      <div className="flex min-h-screen bg-yellow-100">
+      <div className="flex h-screen bg-yellow-100">
         {error ? (
           <div className="text-center">
             <p className="text-2xl mb-4">
@@ -42,14 +42,16 @@ const Phonebook = () => {
               </h1>
             </div>
             <ContactForm />
-            <div className="flex flex-col items-center justify-center space-y-10 md:mb-6">
-              <h2 className="text-2xl text-center md:text-3xl lg:text-4xl xl:text-5xl font-bold mt-8 mb-4 text-yellow-500">
-                Your list
-              </h2>
-              <Filter />
-            </div>
             {contacts.length > 0 ? (
-              <ContactList />
+              <div className="flex flex-col items-center justify-center space-y-10 md:mb-6">
+                <h2 className="text-2xl text-center md:text-3xl lg:text-4xl xl:text-5xl font-bold mt-8 mb-4 text-yellow-500">
+                  Your list
+                </h2>
+                <Filter />
+                <div className="max-h-[400px] min-w-[200px] overflow-y-auto scrollbar">
+                  <ContactList />
+                </div>
+              </div>
             ) : (
               <div className="mt-4">
                 {!loading && (

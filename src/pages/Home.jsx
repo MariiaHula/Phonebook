@@ -8,7 +8,7 @@ import { phoneAnimation } from 'animate/animation';
 const Home = () => {
   return (
     <div
-      className="bg-cover bg-center h-screen flex items-center justify-center overflow-y-hidden"
+      className="bg-cover bg-center flex items-center justify-center overflow-y-hidden"
       style={{
         backgroundImage: `url(${img_2})`,
       }}
@@ -19,7 +19,7 @@ const Home = () => {
         variants={phoneAnimation}
         className="h-screen flex items-center justify-center"
       >
-        <div className="relative w-64 md:w-[280px] ">
+        <div className="relative w-64 md:w-[280px] mb-[100px]">
           <img
             className="w-full h-auto transform scale-140 md:scale-140 lg:scale-140 xl:scale-140"
             src={img_1}
