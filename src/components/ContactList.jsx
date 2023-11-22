@@ -33,7 +33,7 @@ const ContactList = () => {
 
   return (
     <>
-      <ul className="mt-4 pb-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 mr-2 md:mr-4">
+      <ul className="mt-4 pb-[100px] grid gap-4 sm:grid-cols-2 lg:grid-cols-3 mr-2 md:mr-4">
         {contacts.length ? (
           contacts.map(contact => (
             <li
