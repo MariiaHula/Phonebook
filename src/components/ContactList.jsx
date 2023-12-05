@@ -60,7 +60,7 @@ const ContactList = () => {
                 ) : (
                   <button
                     onClick={() => dispatch(deleteContactThunk(contact.id))}
-                    className="contact-list-button w-[60px] h-10 font-roboto text-xs uppercase tracking-wide font-semibold bg-red-400 text-white border-none rounded-full shadow-md transition-all duration-300 ease-in-out cursor-pointer focus:outline-none hover:bg-red-600 focus:bg-red-600 flex items-center justify-center"
+                    className=" ontact-list-button w-[60px] h-10 font-roboto text-xs uppercase tracking-wide font-semibold bg-red-400 text-white border-none rounded-full shadow-md transition-all duration-300 ease-in-out cursor-pointer focus:outline-none hover:bg-red-600 focus:bg-red-600 flex items-center justify-center"
                   >
                     <FiMinus size={30} />
                   </button>
