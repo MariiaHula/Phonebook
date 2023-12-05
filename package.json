@@ -2,7 +2,7 @@
   "name": "react-homework-template",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://mariiahula.github.io/goit-react-hw-08-phonebook",
+  "homepage": "https://mariiahula.github.io/Phonebook",
   "dependencies": {
     "@headlessui/react": "^1.7.17",
     "@heroicons/react": "^2.0.18",
